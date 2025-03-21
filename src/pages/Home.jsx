@@ -45,7 +45,7 @@ function Home() {
                     {Array.isArray(posts) && posts.length > 0 ? (
 posts.map((post) => (
     <div key={post.$id || post.id || post._id || Math.random()} className="p-2 w-1/4">
-        <PostCard {...post} id={post.$id} />
+        <PostCard {...post} postId={post.$id || post.id || post._id} />
     </div>
 ))
                     ) : (
