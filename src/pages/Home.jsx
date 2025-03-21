@@ -10,10 +10,10 @@ function Home() {
     useEffect(() => {
         appwriteService.getPosts().then((posts) => {
             console.log("Fetched Posts:", posts);
-            if (posts && Array.isArray(posts.documents)) {
-                setPosts(posts.documents);
+            if (Array.isArray(posts)) {
+                setPosts(posts);  // Directly set posts, since it is already an array
             } else {
-                setPosts([]); // Set an empty array to prevent errors
+                setPosts([]); // Set an empty array if it's not in expected format
             }
         }).catch(error => {
             console.error("Error fetching posts:", error);
@@ -44,7 +44,7 @@ function Home() {
                 <div className="flex flex-wrap">
                     {Array.isArray(posts) && posts.length > 0 ? (
                         posts.map((post) => (
-                            <div key={post.$id} className="p-2 w-1/4">
+                            <div key={post.id || post._id || Math.random()} className="p-2 w-1/4">
                                 <PostCard {...post} />
                             </div>
                         ))
