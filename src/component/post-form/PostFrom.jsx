@@ -88,7 +88,7 @@ export default function PostForm({ post }) {
       className="flex flex-col md:flex-row gap-6"
     >
       {/* Left Section */}
-      <div className="w-full md:w-2/3 p-4 bg-white shadow-md rounded-lg">
+      <div className="w-full md:w-2/3 p-4 shadow-md rounded-lg">
         <Input
           label="Title :"
           placeholder="Title"
@@ -115,7 +115,7 @@ export default function PostForm({ post }) {
       </div>
 
       {/* Right Section */}
-      <div className="w-full md:w-1/3 p-4 bg-white shadow-md rounded-lg">
+      <div className="w-full md:w-1/3 p-4 shadow-md rounded-lg">
         <Input
           label="Featured Image :"
           type="file"
