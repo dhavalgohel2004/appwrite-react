@@ -49,17 +49,12 @@ function Home() {
                         and stay informed with our latest updates. Join our community today!
                     </p>
 
-                    {/* CTA Buttons */}
-                    <div className='mt-6 flex justify-center space-x-4'>
-
-                    </div>
-
                     {/* Decorative Image / Illustration */}
                     <div className='mt-12 flex justify-center'>
                         <img 
                             src='https://img.freepik.com/premium-photo/wide-angle-shot-single-tree-growing-clouded-sky-sunset-surrounded-by-grass_181624-22807.jpg' 
                             alt='Illustration' 
-                            className='w-3/5 md:w-1/3'
+                            className='w-full'
                         />
                     </div>
                 </div>
