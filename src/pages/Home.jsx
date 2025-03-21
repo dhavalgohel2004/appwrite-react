@@ -57,7 +57,7 @@ function Home() {
                     {/* Decorative Image / Illustration */}
                     <div className='mt-12 flex justify-center'>
                         <img 
-                            src='../assets/henry-be-IicyiaPYGGI-unsplash.jpg' 
+                            src='https://unsplash.com/photos/orange-flowers-IicyiaPYGGI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash' 
                             alt='Illustration' 
                             className='w-3/5 md:w-1/3'
                         />
