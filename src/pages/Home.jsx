@@ -51,12 +51,7 @@ function Home() {
 
                     {/* CTA Buttons */}
                     <div className='mt-6 flex justify-center space-x-4'>
-                        <Link to='/login' className='px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-700 transition'>
-                            Get Started
-                        </Link>
-                        <Link to='/about' className='px-6 py-3 border-2 border-gray-800 text-gray-800 text-lg font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition'>
-                            Learn More
-                        </Link>
+        
                     </div>
 
                     {/* Decorative Image / Illustration */}
