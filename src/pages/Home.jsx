@@ -22,6 +22,7 @@ function Home() {
     
         fetchPosts();
     }, []);       
+
     
 
     if (!userData) {  // Check if user is not logged in
@@ -60,7 +61,7 @@ function Home() {
                 </div>
             </Container>
         </div>
-    );
+    )
 }
 
 export default Home;
