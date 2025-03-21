@@ -43,11 +43,11 @@ function Home() {
             <Container>
                 <div className="flex flex-wrap">
                     {Array.isArray(posts) && posts.length > 0 ? (
-                        posts.map((post) => (
-                            <div key={post.id || post._id || Math.random()} className="p-2 w-1/4">
-                                <PostCard {...post} />
-                            </div>
-                        ))
+posts.map((post) => (
+    <div key={post.$id || post.id || post._id || Math.random()} className="p-2 w-1/4">
+        <PostCard {...post} id={post.$id} />
+    </div>
+))
                     ) : (
                         <p className="text-center w-full">No posts available</p>
                     )}
