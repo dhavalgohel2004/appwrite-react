@@ -65,31 +65,16 @@ export class Service{
         }
     }
 
-    // async getPost(slug){
-    //     try {
-    //         return await this.databases.getDocument(
-    //             conf.appwriteDatabaseId,
-    //             conf.appwriteCollectionId,
-    //             slug
-    //         )
-    //     } catch (error) {
-    //         console.log(error)
-    //         return false
-    //     }
-    // }
-    async getPosts(queries = [Query.equal('status', 'active')]) {
+    async getPost(slug){
         try {
-            console.log("Fetching posts...");
-            const response = await this.databases.listDocuments(
+            return await this.databases.getDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                queries
-            );
-            console.log("Fetched posts response:", response); // Debugging
-            return response.documents || []; // ✅ Ensure it always returns an array
+                slug
+            )
         } catch (error) {
-            console.error("Error fetching posts: ", error);
-            return []; // ✅ Return empty array to prevent "map" errors
+            console.log(error)
+            return false
         }
     }
     
