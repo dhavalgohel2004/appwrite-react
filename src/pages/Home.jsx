@@ -9,6 +9,7 @@ function Home() {
 
     useEffect(() => {
         appwriteService.getPost().then((posts) => {
+            console.log("Fetched Posts:", posts);
             if (posts) {
                 setPosts(posts.documents);
             }
