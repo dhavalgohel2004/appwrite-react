@@ -57,7 +57,7 @@ function Home() {
                     {/* Decorative Image / Illustration */}
                     <div className='mt-12 flex justify-center'>
                         <img 
-                            src='https://unsplash.com/photos/orange-flowers-IicyiaPYGGI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash' 
+                            src='https://img.freepik.com/premium-photo/wide-angle-shot-single-tree-growing-clouded-sky-sunset-surrounded-by-grass_181624-22807.jpg' 
                             alt='Illustration' 
                             className='w-3/5 md:w-1/3'
                         />
