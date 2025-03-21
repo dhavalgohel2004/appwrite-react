@@ -8,7 +8,7 @@ function Home() {
     const userData = useSelector((state) => state.auth.userData); // Get user data from Redux
 
     useEffect(() => {
-        appwriteService.getPost().then((posts) => {
+        appwriteService.getPosts().then((posts) => {
             console.log("Fetched Posts:", posts);
             if (posts) {
                 setPosts(posts.documents);
