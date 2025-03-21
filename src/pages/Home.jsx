@@ -10,11 +10,17 @@ function Home() {
     useEffect(() => {
         appwriteService.getPosts().then((posts) => {
             console.log("Fetched Posts:", posts);
-            if (posts) {
+            if (posts && Array.isArray(posts.documents)) {
                 setPosts(posts.documents);
+            } else {
+                setPosts([]); // Set an empty array to prevent errors
             }
+        }).catch(error => {
+            console.error("Error fetching posts:", error);
+            setPosts([]); // Handle error gracefully
         });
     }, []);
+    
 
     if (!userData) {  // Check if user is not logged in
         return (
@@ -36,11 +42,15 @@ function Home() {
         <div className="w-full py-8">
             <Container>
                 <div className="flex flex-wrap">
-                    {posts.map((post) => (
-                        <div key={post.$id} className="p-2 w-1/4">
-                            <PostCard {...post} />
-                        </div>
-                    ))}
+                    {Array.isArray(posts) && posts.length > 0 ? (
+                        posts.map((post) => (
+                            <div key={post.$id} className="p-2 w-1/4">
+                                <PostCard {...post} />
+                            </div>
+                        ))
+                    ) : (
+                        <p className="text-center w-full">No posts available</p>
+                    )}
                 </div>
             </Container>
         </div>
