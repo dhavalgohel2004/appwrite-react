@@ -84,8 +84,9 @@ export default function PostFrom({post}) {
     
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-        <div className="w-2/3 px-2">
+    <form onSubmit={handleSubmit(submit)} className="flex flex-col md:flex-row flex-wrap gap-4">
+        {/* Left Section (Title, Slug, Content) */}
+        <div className="w-full md:w-2/3 px-2">
             <Input
                 label="Title :"
                 placeholder="Title"
@@ -103,7 +104,9 @@ export default function PostFrom({post}) {
             />
             <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
         </div>
-        <div className="w-1/3 px-2">
+
+        {/* Right Section (Image, Status, Submit Button) */}
+        <div className="w-full md:w-1/3 px-2">
             <Input
                 label="Featured Image :"
                 type="file"
@@ -116,7 +119,7 @@ export default function PostFrom({post}) {
                     <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-lg"
+                        className="rounded-lg w-full h-auto max-h-[200px] object-cover"
                     />
                 </div>
             )}
