@@ -4,12 +4,27 @@ import { Container, PostCard } from "../component";
 
 function Home() {
     const [posts, setPosts] = useState([]);
+    const [userData, setUserData] = useState(null); // Added userData state
 
     useEffect(() => {
+        // Fetch user data
+        const fetchUserData = async () => {
+            try {
+                const user = await appwriteService.getCurrentUser(); // Ensure this method exists in appwriteService
+                setUserData(user);
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+                setUserData(null);
+            }
+        };
+
+        fetchUserData();
+
+        // Fetch posts
         const fetchPosts = async () => {
             try {
                 const fetchedPosts = await appwriteService.getPosts();
-    
+
                 if (Array.isArray(fetchedPosts) && fetchedPosts.length > 0) {
                     setPosts(fetchedPosts);
                 } else {
@@ -19,12 +34,11 @@ function Home() {
                 console.error("Error fetching posts:", error);
             }
         };
-    
-        fetchPosts();
-    }, []);       
-    
 
-    if (!userData) {  // Check if user is not logged in
+        fetchPosts();
+    }, []);
+
+    if (!userData) {  // Ensure userData exists before accessing
         return (
             <div className="w-full py-8 mt-4 text-center">
                 <Container>
