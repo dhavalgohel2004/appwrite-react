@@ -10,16 +10,14 @@ function Home() {
     useEffect(() => {
         appwriteService.getPosts().then((posts) => {
             console.log("Fetched Posts:", posts);
-    
             if (Array.isArray(posts)) {
-                posts.forEach((post, index) => console.log(`Post ${index}:`, post));
-                setPosts(posts);  
+                setPosts(posts);  // Directly set posts, since it is already an array
             } else {
-                setPosts([]); 
+                setPosts([]); // Set an empty array if it's not in expected format
             }
         }).catch(error => {
             console.error("Error fetching posts:", error);
-            setPosts([]); 
+            setPosts([]); // Handle error gracefully
         });
     }, []);
     
