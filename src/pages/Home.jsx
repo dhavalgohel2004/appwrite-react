@@ -51,13 +51,13 @@ function Home() {
 
                     {/* CTA Buttons */}
                     <div className='mt-6 flex justify-center space-x-4'>
-        
+
                     </div>
 
                     {/* Decorative Image / Illustration */}
                     <div className='mt-12 flex justify-center'>
                         <img 
-                            src='/assets/homepage-illustration.svg' 
+                            src='../assets/henry-be-IicyiaPYGGI-unsplash.jpg' 
                             alt='Illustration' 
                             className='w-3/5 md:w-1/3'
                         />
